@@ -1,0 +1,25 @@
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <cmath>
+using namespace std;
+int main ()
+{
+	ifstream in ("input.txt");
+	ofstream out ("output.txt");
+	int N,Q,temp,temp1,max1=0,max=0;
+	in>>N;
+	vector <int> numeri;
+	for (int i=0;i<N;i++)
+	{
+		in>>Q;
+		numeri.push_back(Q);
+	}
+	for (int i=1;i<N;i++)
+	{
+		temp=abs(numeri[i]-numeri[i-1]);
+		if (temp>max)
+			max=temp;
+	}
+		out<<max;
+}
